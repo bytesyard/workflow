@@ -9,4 +9,6 @@ jobs:
       - name: Print current working dir
         run: |
           ls -la $PWD
+          echo $PWD
           ls -la $GITHUB_WORKSPACE
+          echo $GITHUB_WORKSPACE
