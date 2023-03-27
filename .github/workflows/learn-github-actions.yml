@@ -2,7 +2,7 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  check-bats-version:
+  check-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -12,3 +12,9 @@ jobs:
           echo $PWD
           ls -la $GITHUB_WORKSPACE
           echo $GITHUB_WORKSPACE
+          touch .config
+          cat >> .config <<EOF
+          CONFIG_TARGET_IMAGES_GZIP=y
+          CONFIG_KERNEL_BUILD_USER="OpenWrt-CI"
+          CONFIG_KERNEL_BUILD_DOMAIN="Azure"
+          EOF
