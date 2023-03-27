@@ -12,6 +12,12 @@ jobs:
           echo $PWD
           ls -la $GITHUB_WORKSPACE
           echo $GITHUB_WORKSPACE
+          mkdir test && cd test/
+          ls -la $PWD
+          echo $PWD
+          ls -la $GITHUB_WORKSPACE
+          echo $GITHUB_WORKSPACE
+
           touch .config
           cat >> .config <<EOF
           CONFIG_TARGET_IMAGES_GZIP=y
